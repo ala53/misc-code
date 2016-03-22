@@ -1,0 +1,112 @@
+﻿/*Code from http://codepen.io/PorototypeX/pen/swvtc - MIT License*/
+.backing {
+    box-shadow: 4px 4px 10px black;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+}
+
+.navbar {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: inline;
+    list-style-type: none;
+    position: relative;
+    margin-top: 100px;
+    text-align: center;
+}
+
+    .navbar > li {
+        background: #3F4A4F;
+        border-top: 1px solid #8A8A94;
+        border-bottom: 1px solid black;
+    }
+
+    .navbar a {
+        color: #EDEDED;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 140%;
+        width: 100%;
+        height: 100%;
+        line-height: 50px;
+        display: block;
+        outline: 0;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        border-left: 5px solid transparent;
+    }
+
+li.active a {
+    color: #EC6E00;
+    border-left: 5px solid #EC6E00;
+    background-color: #323C40;
+    outline: 0;
+}
+
+.navbar > li:not(.active):hover a {
+    color: #FAFAFA;
+    border-left: 5px solid #FAFAFA;
+    background-color: #323C40;
+}
+
+div.backing {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 200px;
+    max-width: 400px;
+    display: block;
+    position: relative;
+}
+/*The code for the submenu css is below. I am planning for each of the future submenus to have a class that starts with "menu" so that's why I didn't use the exact class for each selector*/
+
+ul[class^="menu"] {
+    list-style-type: none;
+    padding: 0;
+    position: relative;
+}
+
+    ul[class^="menu"] a {
+        color: white;
+        background-color: #51595C;
+        position: relative;
+        text-decoration: none;
+        line-height: 35px;
+        font-size: 110%;
+        display: block;
+        border-left: 5px solid #323C40 /*Originally 0055BA*/;
+        z-index: 1;
+    }
+
+        ul[class^="menu"] a:before {
+            content: "";
+            background-color: #51595C /*Originally 0055BA*/;
+            position: absolute;
+            left: 0px;
+            height: 35px;
+            width: 100%;
+            transition: all 0.4s ease 0s;
+            -webkit-transition: all 0.4s ease 0s;
+            z-index: -1;
+        }
+
+        ul[class^="menu"] a:hover:before {
+            width: 100%;
+            background-color: #323C40 /*Originally 0055BA*/;
+        }
+
+        ul[class^="menu"] a:hover span {
+            color: white;
+            transition-delay: 0.09s;
+            z-index: 1;
+        }
+
+    ul[class^="menu"] span {
+        z-index: 3;
+    }
+
+ul[class^="menu"] {
+    display: none;
+}

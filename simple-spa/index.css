@@ -1,0 +1,23 @@
+﻿body {
+}
+
+.placeholder {
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.placeholder-fill {
+    width: 90%;
+	margin: auto;
+}
+
+.placeholder-static {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
